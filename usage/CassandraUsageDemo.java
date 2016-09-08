@@ -180,7 +180,8 @@ public class CassandraUsageDemo {
 	}
 
     /**
-     * Closes the session and the cluster.
+     * Closes the session and the cluster.<br>
+     * 最后一定要记得关闭！
      */
     public void close() {
         session.close();
