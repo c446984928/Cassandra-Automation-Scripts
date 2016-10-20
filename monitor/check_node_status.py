@@ -38,7 +38,7 @@ def write_flag(flag):
 
 def read_flag():
     if os.path.isfile('status.flag'):
-        with open('status.flag', 'b') as f:
+        with open('status.flag', 'r') as f:
             flag_str = f.readline()
             if 'abnormal' in flag_str:
                 return 'abnormal'
@@ -50,8 +50,8 @@ def read_flag():
 
 def send_mail_tool(b):
     logging.info("sendmail")
-    sendmail.send_mail('10.204.16.7', 'node DOWN report', 'c* cluster', 'calvin_chen@trendmicro.com.cn', b)
-    sendmail.send_mail('10.204.16.7', 'node DOWN report', 'c* cluster', 'wenjun_yang@trendmicro.com.cn', b)
+    sendmail.send_mail('10.204.16.7', 'node DOWN report', 'c* cluster', 'a@test.com', b)
+    sendmail.send_mail('10.204.16.7', 'node DOWN report', 'c* cluster', 'b@test.com', b)
 
 
 check_node_status()
